@@ -6,3 +6,4 @@ def test_button_exist(driver):
 def test_button_clicked(driver):
     driver.find_element(By.ID, 'submit-id-submit').click()
     assert 'Submitted' == driver.find_element(By.ID, 'result-text').text
+    

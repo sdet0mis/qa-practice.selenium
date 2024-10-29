@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  api-tests:
+    image: tests:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/workspace
+    command: /bin/sh -c "pytest -sv --alluredir results"
+    working_dir: /usr/workspace
+
+  report:
+    image: tests:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/workspace
+    command: /bin/sh -c "allure serve results --clean -o report"
+    working_dir: /usr/workspace
