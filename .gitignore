@@ -2,3 +2,5 @@
 .pytest_cache
 __pycache__/
 venv/
+allure-results/
+allure-report/
