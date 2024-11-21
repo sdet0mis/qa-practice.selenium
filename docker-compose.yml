@@ -1,22 +1,16 @@
-version: "3.7"
-
 services:
-  api-tests:
-    image: tests:v1
+  test:
+    image: test_qa-practice_ui
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - ./:/usr/workspace
-    command: /bin/sh -c "pytest --alluredir=allure-results"
-    working_dir: /usr/workspace
-
-  report:
-    image: tests:v1
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/usr/workspace
-    command: /bin/sh -c "allure serve results --clean -o report"
+    command: 
+      - /bin/sh
+      - -c 
+      - |
+        pytest --alluredir=allure-results
+        allure generate --single-file allure-results --clean
+        rm -rf allure-results
     working_dir: /usr/workspace
