@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.10-alpine3.19
 
 RUN echo "https://dl-4.alpinelinux.org/alpine/v3.10/main" >> /etc/apk/repositories && \
     echo "https://dl-4.alpinelinux.org/alpine/v3.10/community" >> /etc/apk/repositories

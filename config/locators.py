@@ -8,5 +8,5 @@ class InputPageLocators:
 
 class ButtonPageLocators:
 
-    SIMPLE_BUTTON = (By.ID, "submit-id-submit")
+    SIMPLE_BUTTON = (By.XPATH, "//input[@type='submit']")
     RESULT_TEXT = (By.ID, "result-text")

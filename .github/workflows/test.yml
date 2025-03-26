@@ -1,20 +1,7 @@
 name: Test
 
 on:
-  workflow_dispatch:
-    inputs:
-      deployment_target:
-        description: select tests to run
-        required: true
-        type: choice
-        default: all
-        options:
-          - all
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+  workflow_dispatch
 
 jobs:
   run-tests:

@@ -10,7 +10,7 @@ services:
       - /bin/sh
       - -c 
       - |
-       pytest -s --alluredir=allure-results
+       pytest --alluredir=allure-results
        allure generate --single-file allure-results --clean
        rm -rf allure-results
     working_dir: /usr/workspace
